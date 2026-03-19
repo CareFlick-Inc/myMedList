@@ -35,6 +35,14 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>MyMedList needs camera access to take photos of your medication slips.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>MyMedList needs photo library access to select medication slip images.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>MyMedList needs permission to save photos to your library.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>MyMedList needs microphone access when using the camera.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>UILaunchStoryboardName</key>
@@ -51,5 +59,10 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>MaterialIcons.ttf</string>
+		<string>Ionicons.ttf</string>
+	</array>
 </dict>
 </plist>

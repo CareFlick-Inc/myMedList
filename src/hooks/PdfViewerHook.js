@@ -1,6 +1,6 @@
 import React from "react";
 import { View,StyleSheet,Dimensions } from "react-native";
-import RNFetchBlob from 'react-native-fetch-blob'
+import RNFetchBlob from 'react-native-blob-util'
 import Share from 'react-native-share';
 //pdf to img
 import RNPdfToImage from 'react-native-pdf-to-image';

@@ -1,5 +1,5 @@
 import React, {useEffect,useState} from 'react';
-import {FlatList,View,Keyboard} from 'react-native';
+import {FlatList,View,Keyboard,TouchableWithoutFeedback} from 'react-native';
 import {getData} from '../helpers/AsyncHelper'
 
 
@@ -142,7 +142,7 @@ export default function MyInfo(props){
       };
 
     return (
-      spinnerOn?<Spinner/>:<View style={{flex:1}}>
+      spinnerOn?<Spinner/>:<TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}><View style={{flex:1}}>
             
             <FlatList
 
@@ -259,7 +259,7 @@ export default function MyInfo(props){
                 showTwin={true}
             /> 
             </View>
-        
+        </TouchableWithoutFeedback>
       );
   
 }

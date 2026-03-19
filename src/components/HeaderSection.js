@@ -1,6 +1,7 @@
 //imports
 import React from 'react';
 import {Text, View, TouchableOpacity,Image,FlatList} from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import appLabels from '../../assets/static_resources/strings.js';
 
 import icon from '../hooks/Icon.js';
@@ -13,6 +14,7 @@ import { socials } from '../../assets/static_resources/objects.js';
 export default function HeaderSection(props){
     //  this.setState(...)
     const navigation = props.navigation;
+    const insets = useSafeAreaInsets();
     const title = props.Title
     const  goback = true && title != appLabels.homeTitle
 
@@ -23,6 +25,7 @@ export default function HeaderSection(props){
     let iconName  =goback ? "arrow-back":"menu"
 
     return(
+        <View style={{ backgroundColor: "rgba(34, 171, 226, 1)", paddingTop: insets.top }}>
         <View  style={headerStyle.appBarTopContainer}>
                <View  style={headerStyle.appBarElevationContainer}>
                    <View  style={headerStyle.appBarShadowContainer}>
@@ -89,6 +92,7 @@ export default function HeaderSection(props){
                  </View>
               
        </View>
+        </View>
     )
   
 }

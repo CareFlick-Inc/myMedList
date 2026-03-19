@@ -1,5 +1,5 @@
-import RNFetchBlob from 'react-native-fetch-blob'
-import { PermissionsAndroid, ToastAndroid } from "react-native";
+import RNFetchBlob from 'react-native-blob-util'
+import { PermissionsAndroid, ToastAndroid, Platform } from "react-native";
 
 
 
@@ -51,17 +51,23 @@ function listPath(path){
 
 export async function moveFile(src,dst){
     
-    const permision = await requestStoragePermision()
-
     let DEST_PATH = dirs.DocumentDir + '/'+dst
     let SRC_PATH =  src.replace('file://', '')
 
-    if(permision){
-        RNFetchBlob.fs.cp(SRC_PATH, DEST_PATH)
-        .then(() => { console.log('file saved') })
-        .catch((err) => { console.log('error '+err)})
-    }else{
-        console.log('storage permission denied')
+    // PermissionsAndroid is Android-only; on iOS just proceed with the copy
+    if(Platform.OS === 'android'){
+        const permision = await requestStoragePermision()
+        if(!permision){
+            console.log('storage permission denied')
+            return 'file://'+DEST_PATH
+        }
+    }
+
+    try {
+        await RNFetchBlob.fs.cp(SRC_PATH, DEST_PATH)
+        console.log('file saved')
+    } catch(err) {
+        console.log('moveFile copy error: '+err)
     }
     return 'file://'+DEST_PATH
 }

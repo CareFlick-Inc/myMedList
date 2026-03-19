@@ -54,6 +54,8 @@ export default function Takenphoto(props){
                       contentContainerStyle= {spinnerOn?{flex:1}:{flex:0}}>
           {spinnerOn ? <Spinner/>:<View style ={styles.takenPhotoBody}>
 
+
+
             {imageData?
             
                <ReactImage  source={{uri:imageData.uri+""}} style={[styles.slipimagecontainer, orientation === 'PORTRAIT'?{height:heightPercentageToDP('80%')}:{height:widthPercentageToDP('60%'),}]}/>

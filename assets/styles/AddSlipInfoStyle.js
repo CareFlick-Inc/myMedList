@@ -20,16 +20,15 @@ export default StyleSheet.create({
       },
       shadowRadius: (wrp(5)),
     },
-    twinButtonContainer:{
-      position:"relative",
-      marginTop:(hrp(10)),
-      marginBottom:(hrp(30)),
-      paddingLeft:"5%",
-      paddingRight:"5%",
-      flexDirection:"row",
-      width: ("100%"),
-      justifyContent:"space-between"
-   },  
+   twinButtonContainer: {
+  paddingLeft: "5%",
+  paddingRight: "5%",
+  paddingVertical: 10,
+  flexDirection: "row",
+  width: "100%",
+  justifyContent: "space-between",
+  backgroundColor: '#fff',  // match your app background
+},
    hallfInputContainer: {
     opacity: 1,
     position: "relative",

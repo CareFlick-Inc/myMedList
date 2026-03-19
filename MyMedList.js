@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
@@ -148,6 +149,7 @@ function MyMedList(props) {
   
 
 return (
+    <SafeAreaProvider>
     <NavigationContainer>
       <Drawer.Navigator
       initialRouteName={"stack"}
@@ -168,6 +170,7 @@ return (
         <Drawer.Screen name={appLabels.myInfoTitle} options={{headerShown: true}}component={MyInfo}/>
       </Drawer.Navigator>
     </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
 

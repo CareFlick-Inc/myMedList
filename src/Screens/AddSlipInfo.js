@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import {FlatList,View,Keyboard} from 'react-native';
+import {FlatList,View,Keyboard,KeyboardAvoidingView,Platform,TouchableWithoutFeedback} from 'react-native';
 
 //components import
 import HalfInputContainer from '../components/HalfInputContainer';
@@ -49,7 +49,7 @@ export default function AddSlipInfo(props){
         const[spinnerOn,setspinnerOn]=useState(true)
         const [isRequired, setIsRequired] = useState(true)
 
-        const [isKeyboardVisible, setKeyboardVisible] = useState(false);
+
 
         const orientation = UseOrientation();
 
@@ -58,24 +58,7 @@ export default function AddSlipInfo(props){
         if(focused){
           loadData()
         }
-        const keyboardDidShowListener = Keyboard.addListener(
-          'keyboardDidShow',
-          () => {
-            setKeyboardVisible(true); // or some other action
-          }
-        );
-        const keyboardDidHideListener = Keyboard.addListener(
-          'keyboardDidHide',
-          () => {
-            setKeyboardVisible(false); // or some other action
-          }
-        );
-    
-    
-    
       return () => {
-          keyboardDidHideListener.remove();
-          keyboardDidShowListener.remove();
       }
       }, [props.route.params.key,props.route.params.imageData]);
        
@@ -180,7 +163,8 @@ export default function AddSlipInfo(props){
 return (
 
       spinnerOn? <Spinner/>:
-      <View style={{flex:1}}>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+      <KeyboardAvoidingView style={{flex:1}} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
 
 
       <FlatList
@@ -289,7 +273,7 @@ return (
 
 
             
-            {props.route.params.key | isKeyboardVisible?null:<View  style={[{zIndex:0},styles.twinButtonContainer]}>
+            {props.route.params.key ? null : <View  style={[{zIndex:0},styles.twinButtonContainer]}>
                   <Button buttonLabel={appLabels.cancel} 
                       disabled={false}
                       onPress={()=>{
@@ -323,7 +307,8 @@ return (
                 rTitle={appLabels.no}
                 showTwin={true}
             /> 
-            </View>
+            </KeyboardAvoidingView>
+      </TouchableWithoutFeedback>
       );
 
 }

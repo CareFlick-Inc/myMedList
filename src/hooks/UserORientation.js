@@ -22,12 +22,12 @@ export function UseOrientation(){
 
   useEffect(() => {
     
-    const callback = () =>  isFocused? setOrientation(isPortrait() ? 'PORTRAIT' : 'LANDSCAPE'):null;
+    const callback = () => isFocused ? setOrientation(isPortrait() ? 'PORTRAIT' : 'LANDSCAPE') : null;
 
-    isFocused?Dimensions.addEventListener('change', callback):nulll;
+    const subscription = isFocused ? Dimensions.addEventListener('change', callback) : null;
 
     return () => {
-        Dimensions.remove('change', callback);
+        subscription?.remove();
       };
     }, []);
     return isPortrait() ? 'PORTRAIT' : 'LANDSCAPE';
