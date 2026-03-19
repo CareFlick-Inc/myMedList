@@ -45,6 +45,7 @@ const ItemReviewList = (props) => {
                             
 
                             return <SolidInput  
+                              key={"item:"+index+item.rootKey+":"+item.childKey}
                               width={"100%"}
                               func={item.func?item.func:null}
                               inputLabel={item.inputLabel}

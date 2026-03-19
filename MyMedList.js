@@ -131,7 +131,7 @@ return (  <Stack.Navigator
         if(item.screenTitle != appLabels.myInfoTitle &&item.title != appLabels.exit && item.title != 'Review' && item.title != appScreenName.share){
           let showHeader = item.screenTitle == appLabels.homeTitle ? true: true
           let lazy = item.screenTitle == appLabels.addSlipTitle   ? true:false;
-            let screen =(<Stack.Screen name={item.screenTitle} options={{headerShown: showHeader}} component={item.component} />)
+            let screen =(<Stack.Screen key={item.screenTitle} name={item.screenTitle} options={{headerShown: showHeader}} component={item.component} />)
           return screen
         }else if(item.title == 'Review'){
           

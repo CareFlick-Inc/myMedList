@@ -5,8 +5,8 @@ import {View,BackHandler, Text, ScrollView, Linking} from 'react-native';
 //import appLabels, { appDescription } from '../assets/static_resources/strings';
 //component
 import Logo from '../utilis/Logo';
-//drawer list
-import drawerItems from '../../assets/data/drawerItem';
+//help items
+import drawerItems from '../../assets/data/helpData';
 //Style import
 import styles from '../../assets/styles/drawerStyle'
 import Icon from '../hooks/Icon';
@@ -21,8 +21,6 @@ export default function Help(props){
             >
                   <View  style={[styles.separator,{width:'100%'}]}></View>
                   {drawerItems.map((item,index)=>{
-                    
-                    if(item.description){
                     return (
                         <TouchableOpacity key={"drawerItemContainer#"+index} 
                               style={[styles.drawerItems,]}
@@ -40,10 +38,10 @@ export default function Help(props){
                          <Text
                               style={[styles.labelStyle,{textAlign:'center',color:colors.inputTextColor,fontSize:24}]}
                           > 
-                            {item.description?item.description:null}
+                            {item.description}
                           </Text>
                          
-                      </TouchableOpacity>)}
+                      </TouchableOpacity>);
                   })}
                   <TouchableOpacity 
                   

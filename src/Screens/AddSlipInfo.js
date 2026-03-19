@@ -211,11 +211,12 @@ return (
                           item.group ? 
                           
                          
-                          item.group.map((item)=>{
+                          item.group.map((item,index)=>{
 
                               
 
                               let content =   <HalfInputContainer  
+                                key={"item:"+index+item.rootKey+":"+item.childKey}
                                 width={"49%"}
                                 iconName = {item.iconName?item.iconName:null}
                                 iconName2 = {item.iconName2?item.iconName2:null}
@@ -239,7 +240,7 @@ return (
                                 if(halfList.length >= 2){
                                   let listCp = [...halfList]
                                   halfList = []
-                                 return (<View style={styles.hallfInputContainer}>
+                                 return (<View key={"group:"+index} style={styles.hallfInputContainer}>
                                                 {listCp}
                                        </View>)
 

@@ -197,7 +197,7 @@ export default function MyInfo(props){
                               if(halfList.length >= 2){
                                 let listCp = [...halfList]
                                 halfList = []
-                               return (<View style={styles.hallfInputContainer}>
+                               return (<View key={"group:"+index} style={styles.hallfInputContainer}>
                                               {listCp}
                                      </View>)
 
