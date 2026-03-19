@@ -896,7 +896,7 @@ PODS:
     - React-Core
   - react-native-image-picker (4.6.0):
     - React-Core
-  - react-native-pdf (6.4.0):
+  - react-native-pdf (6.7.7):
     - React-Core
   - react-native-safe-area-context (4.14.1):
     - React-Core
@@ -1089,7 +1089,7 @@ PODS:
     - React-RCTImage
   - RNShare (7.3.2):
     - React-Core
-  - RNVectorIcons (9.0.0):
+  - RNVectorIcons (9.2.0):
     - React-Core
   - SocketRocket (0.6.1)
   - Yoga (1.14.0)
@@ -1332,7 +1332,7 @@ SPEC CHECKSUMS:
   react-native-element-dropdown: 6b14eb4b2964909d031876d8991795540a73b8e4
   react-native-html-to-pdf: 7a49e6c58ac5221bcc093027b195f4b214f27a9d
   react-native-image-picker: 52e096d1b3b482a3d0a536cba3761e72a1ec4324
-  react-native-pdf: a56341efc56a1c258f8f6f76e91b5271c74fb27d
+  react-native-pdf: 6a51a22ccefb23eb93298771e4bf090913e86d70
   react-native-safe-area-context: 758e894ca5a9bd1868d2a9cfbca7326a2b6bf9dc
   react-native-select-contact: faae93abd824cfff97d28906d76f4e4efddbaa9b
   react-native-splash-screen: 95994222cc95c236bd3cdc59fe45ed5f27969594
@@ -1361,7 +1361,7 @@ SPEC CHECKSUMS:
   RNReanimated: 1ef68beaad1a8f4cb2a9098d0d3c374a2e3fd51a
   RNScreens: 3ce54903891fd6281865ad3e7cfe4c2bb438c70c
   RNShare: a42ad831f98797ab8d3ec13d78fa1d4bd421df21
-  RNVectorIcons: 58e1f696a44687c64b0165d892b74e0843b5db4c
+  RNVectorIcons: 5784330be9dddb5474e8b378d5f6947996c84e55
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: a813a6d82538ccba91c54406404e3ed80b48a692
 
