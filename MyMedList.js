@@ -71,7 +71,7 @@ function ShareTab(props){
 }
 
 // active slip image and shared pdfs view page
-function reviewTab(props){
+function ReviewTab(props){
 
   return(
   
@@ -109,7 +109,7 @@ function reviewTab(props){
 }
 
 //stack nav
-function stackNav(props){
+function StackNav(props){
 return (  <Stack.Navigator
             initialRouteName={appLabels.homeTitle}            
             screenOptions={
@@ -123,7 +123,7 @@ return (  <Stack.Navigator
         >
  
   <Stack.Screen name={appLabels.shareTitle} options={{headerShown: false}} component={ShareTab}/>
-  <Stack.Screen name={appLabels.reviewTitle} options={{headerShown: true}} component={reviewTab} />
+  <Stack.Screen name={appLabels.reviewTitle} options={{headerShown: true}} component={ReviewTab} />
   
 
   {drawerItems.map((item,index)=>{
@@ -166,7 +166,7 @@ return (
         
         })
       }>
-        <Drawer.Screen name="stack" options={{headerShown: false}}component={stackNav}/>
+        <Drawer.Screen name="stack" options={{headerShown: false}}component={StackNav}/>
         <Drawer.Screen name={appLabels.myInfoTitle} options={{headerShown: true}}component={MyInfo}/>
       </Drawer.Navigator>
     </NavigationContainer>
