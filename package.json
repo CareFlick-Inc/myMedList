@@ -5,6 +5,8 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "archive": "xcodebuild archive -workspace ios/MyMedList.xcworkspace -scheme MyMedList -configuration Release -archivePath ./MyMedList.xcarchive -destination \"generic/platform=iOS\" CODE_SIGN_STYLE=Automatic DEVELOPMENT_TEAM=7ZQP66Z7K7 2>&1 | tail -40", 
+    "ipa": "xcodebuild -exportArchive -archivePath ./MyMedList.xcarchive -exportOptionsPlist ./ExportOptions.plist -exportPath ./IPA 2>&1 | tail -30",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint ."
